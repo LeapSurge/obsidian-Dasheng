@@ -1,0 +1,89 @@
+@use '../utils' as *;
+
+
+// 用half-line-gap来计算的高度,c为紧凑, s为宽松。
+//-------------------------------------------
+$hlg-c: 0.25;
+
+// 1. heading的高度
+// $h-font: the 'h' means 'headings', font heights of the headings
+// $h-bblank: bottom blanks
+// $h-full-height: overall heights headings have
+// $h-tblank: top blanks
+$hc-font: (7,6,5.5,5,4.5,4);
+$hc-bblank: (3.25,3,2.75,2.5,2.25,2);
+$hc-full-height: (18,16,14,13,10,9);
+
+// 2. 块间间距
+$pc: 2;
+
+
+
+
+$mods: (
+  'compact': (
+    'headings': (
+      'h1': head($hlg-c, nth($hc-font,1), nth($hc-bblank,1), nth($hc-full-height,1)),
+      'h2': head($hlg-c, nth($hc-font,2), nth($hc-bblank,2), nth($hc-full-height,2)),
+      'h3': head($hlg-c, nth($hc-font,3), nth($hc-bblank,3), nth($hc-full-height,3)),
+      'h4': head($hlg-c, nth($hc-font,4), nth($hc-bblank,4), nth($hc-full-height,4)),
+      'h5': head($hlg-c, nth($hc-font,5), nth($hc-bblank,5), nth($hc-full-height,5)),
+      'h6': head($hlg-c, nth($hc-font,6), nth($hc-bblank,6), nth($hc-full-height,6)),
+    ),
+    'p': $pc * $hlg-c,
+  ),
+  // spongy: (
+  // ),
+);
+
+@mixin mod($mod-name) {
+  $mod-map: map-get($mods, $mod-name);
+  $height: 'var(--font-text-size)';
+
+  // heading control
+  @each $head,$attributes in map-get($mod-map, 'headings') {
+    --#{$head}-size: calc(#{map-get($attributes,'size')} * #{$height});
+    --#{$head}-line-height: calc(#{map-get($attributes,'line height')} * #{$height});
+    
+    .markdown-rendered #{$head} {
+      --heading-spacing: calc(#{map-get($attributes,'margin top')} * #{$height});
+      margin-block-start: var(--heading-spacing);
+      margin-block-end: calc(#{map-get($attributes,'margin bottom')} * #{$height});
+    }
+  }
+
+  // block gap
+  --p-spacing: calc(#{map-get($mod-map, 'p')} * #{$height});
+
+  // list
+  div:has(> p) + div > :is(ul,ol){
+    margin-block-start: calc(-1 * var(--p-spacing)) !important;
+  }
+
+  /* 设置标题后收紧 */
+  /* 1. 标题接排收紧 */
+  .markdown-rendered :is(
+    div:has(> :is(h1,h2,h3,h4,h5,h6)) + div > h6,
+    div:has(> :is(h1,h2,h3,h4,h5)) + div > h5,
+    div:has(> :is(h1,h2,h3,h4)) + div > h4,
+    div:has(> :is(h1,h2,h3)) + div > h3,
+    div:has(> :is(h1,h2)) + div > h2,
+    div:has(> h1) + div > h1) {
+      margin-block-start: 0 !important;
+  }
+  
+  /* 2. 标题接其他块 */
+  .markdown-rendered div:has(> :is(h1,h2,h3,h4,h5,h6)) + div > :is(blockquote,p,ol,ul,pre){
+    margin-block-start: 0 !important;
+  }
+
+  .cm-s-obsidian .cm-line.HyperMD-header {
+    padding-top: 0;
+  } 
+  .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-5 {
+    padding-top: calc(0.2* #{$height}) !important;
+  }
+  .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-6 {
+    padding-top: calc(0.2* #{$height}) !important;
+  }
+}

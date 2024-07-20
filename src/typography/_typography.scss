@@ -1,0 +1,21 @@
+// 用于设置各个块和内联式样的字体回落序列
+@use '../globals' as *;
+@use 'vars';
+@use 'mixins';
+
+// default font-family
+html, .markdown-preview-view, .markdown-source-view.mod-cm6 .cm-scroller {
+  @include mixins.typeface-by-lang('Serif', vars.$w-serif, Songti, Serif);
+}
+
+pre {
+  @include mixins.typeface-by-lang('Sans', vars.$w-mono, Heiti, sans-serif);
+}
+
+.markdown-rendered blockquote, #{$preview}.HyperMD-quote {
+  @include mixins.typeface-by-lang('Serif', vars.$w-cursive, Kaiti, cursive);
+}
+
+h1,h2,h3,h4,h5,h6,.HyperMD-header {
+  @include mixins.typeface-by-lang('Sans', vars.$w-sans, Heiti, sans-serif);
+}

@@ -1,0 +1,29 @@
+@use 'range';
+/**
+ * The Four Typefaces: Fangsong
+ * 四大字體集・仿宋體
+ */
+
+// * 1. 简体字形
+// * 2. 繁体字形
+
+
+// 1
+@font-face {
+    @include range.cjk;
+    font-family: 'Hans Fangsong';
+    src:
+      local(STFangsong),
+      local(FangSong)
+    ;
+}
+
+// 2
+@font-face {
+    @include range.cjk;
+    font-family: 'Hant Fangsong';
+    src:
+      local(STFangsong),
+      local(FangSong)
+    ;
+}

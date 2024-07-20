@@ -1,0 +1,62 @@
+
+// * CJK-related blocks
+// *
+@mixin cjk {
+  unicode-range:
+    // Basic CJK unified ideographs
+    // 中日韓統一意音文字
+    U+4E00-9FFF,
+
+    // CJK Ext-A, B, C, D
+    // 擴展A、B、C、D（急用漢字）區
+    U+3400-4DB5,
+    U+20000-2A6D6,
+    U+2A700-2B734,
+    U+2B740-2B81D,
+
+    // 12 Compatibility Ideograph characters
+    // 12個「相容意音文字」
+    U+FA0E-FA0F, U+FA11, U+FA13-FA14, U+FA1F, U+FA21, U+FA23, U+FA24, U+FA27-FA29,
+
+    // Kana
+    // 假名
+    U+3040-309F, U+30A0-30FF,
+    U+3099-309E,
+    U+FF66-FF9F,
+
+    // Ideographic number ‘zero’
+    // 數字「〇」
+    U+3007,
+
+    // Strokes
+    // 筆畫
+    U+31C0-31E3,
+
+    // Kangxi and supplement radicals
+    // 康熙字典及簡化字部首
+    U+2F00-2FD5, U+2E80-2EF3
+  ;
+}
+
+
+// * 标点符号
+// *
+@mixin biaodian {
+  unicode-range: 
+    U+201C, U+201D, 
+    U+2018, U+2019, 
+    U+2E3A, U+2014, U+2013, 
+    U+2026, 
+    U+00B7, U+007E, U+002F,
+    //。，、
+    U+3002, U+FF0C, U+3001,
+    //；：？！
+    U+FF1B, U+FF1A, U+FF1F, U+FF01,
+    //－／＼
+    U+FF0D, U+FF0F, U+FF3C,
+    //「『』」
+    U+300C-300F,
+    //（）《》〈〉〔〕
+    U+300A-300B, U+3008-3009, U+FF08-FF09, U+3014-3015
+    ;
+}

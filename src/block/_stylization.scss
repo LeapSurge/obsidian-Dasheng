@@ -1,0 +1,10 @@
+// headings' weights and colors
+body {
+  --blockquote-color: rgb(169, 90, 53);
+  @for $i from 1 through 6 {
+    --h#{$i}-weight: 900;
+    @if $i % 2 == 0 {
+      --h#{$i}-color: #c9242b;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use 'range';
+/**
+ * The Four Typefaces: Kaiti (Cursive)
+ * 四大字體集・楷體
+ */
+
+// * 1. 简体字形
+// * 2. 繁体字形
+
+// 1
+@font-face {
+  @include range.cjk;
+  font-family: 'Hans Kaiti';
+  src:
+    local('Kaiti SC Regular'),
+    local(STKaiTi-SC-Regular),
+    local('Kaiti SC'),
+    local(STKaiti),
+    local(Kai),
+    local(Kaiti),
+    local(DFKai-SB)
+    ;
+}
+
+// 2
+@font-face {
+  @include range.cjk;
+  font-family: 'Hant Kaiti';
+  src:
+    local(BiauKai),
+    local('標楷體'),
+    local(DFKai-SB),
+    local(BiauKaiTC-Regular),
+    local('Kaiti TC Regular'),
+    local(STKaiTi-TC-Regular),
+    local('Kaiti TC')
+  ;
+}
+
+/*
+ * Bold
+ */
+
+// 1
+@font-face {
+  font-family: 'Hans Kaiti';
+  font-weight: 700;
+  src:
+    local('Kaiti SC Bold'),
+    local(STKaiti-SC-Bold),
+    local('Kaiti SC'),
+    local('Kaiti TC Bold'),
+    local(STKaiTi-TC-Bold),
+    local('Kaiti TC')
+  ;
+}
+
+// 2
+@font-face {
+  font-family: 'Hant Kaiti';
+  font-weight: 700;
+  src:
+    local('Kaiti TC Bold'),
+    local(STKaiTi-TC-Bold),
+    local('Kaiti SC Bold'),
+    local(STKaiti-SC-Bold),
+  ;
+}

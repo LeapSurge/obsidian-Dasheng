@@ -1,0 +1,59 @@
+@use 'range';
+@font-face {
+  font-family: 'Biaodian Hans Serif';
+  @include range.biaodian;
+  src:
+    local('Source Han Serif SC'),
+    local('Source Han Serif CN'),
+    
+    local('Noto Serif CJK SC'),
+    local('Noto Serif SC'),
+    local('Songti SC'),
+    local(STSong),
+    local(SimSun)
+}
+
+@font-face {
+  font-family: 'Biaodian Hans Sans';
+  @include range.biaodian;
+  src: 
+    local('Source Han Sans SC'),
+    local('Source Han Sans CN'),
+    local('Noto Sans CJK SC'),
+    local('Noto Sans SC'),
+
+    local('PingFang SC'),
+    local('Heiti SC'),
+    local('Microsoft Yahei')
+    ;
+}
+
+@font-face {
+  font-family: 'Biaodian Hant Serif';
+  @include range.biaodian;
+  src: 
+    local('Source Han Serif TC'),
+    local('Source Han Serif TW'),
+    local('Noto Serif CJK TC'),
+    local('Noto Serif TC'),
+
+    local('Songti TC'),
+    local(STSong),
+    local(SimSun)
+    ;
+}
+
+@font-face {
+  font-family: 'Biaodian Hant Sans';
+  @include range.biaodian;
+  src: 
+    local('Source Han Sans TC'),
+    local('Source Han Sans TW'),
+    local('Noto Sans CJK TC'),
+    local('Noto Sans TC'),
+
+    local('PingFang TC'),
+    local('Heiti TC'),
+    local('Microsoft JhengHei')
+  ;
+}

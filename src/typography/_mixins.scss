@@ -1,0 +1,32 @@
+@use "sass:map";
+@use '../utils' as *;
+@use 'vars';
+
+
+@function add-font($pre-map: vars.$zh-pre, $add-key: Songti) {
+  $value: map.get($pre-map, $add-key);
+  @return #{if($value == null or $value == '', '',  $value)};
+}
+
+@mixin typeface-by-lang( $biaodian: 'Serif', $western: vars.$w-serif, $zh: Songti, $base: Serif ) {
+  &:lang(zh),
+  &:lang(zh-hans) {
+    font-family: 
+      "Biaodian Hans " + $biaodian,
+      $western,
+      #{add-font(vars.$zh-pre, $zh)},
+      'Hans ' + $zh,
+      $base 
+      !important;
+  }
+  &:lang(zh-hant) {
+    font-family: 
+      "Biaodian Hant " + $biaodian,
+      $western,
+      #{add-font(vars.$zh-pre, $zh)},
+      'Hant ' + $zh,
+      $base 
+      !important;
+  }
+
+}

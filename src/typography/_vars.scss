@@ -1,0 +1,35 @@
+// **
+// * Default Chinese locale variant
+// * (Traditional or simplified characters)
+// * `hant` || `hans`
+// *
+$han-default-variant:     hans    !default;
+
+
+// **
+// * Generic typefaces for Western (Latin-based)
+// * characters
+// *
+$w-sans:    'Helvetica Neue', Helvetica, Arial    !default;
+$w-serif:   Georgia, 'Times News Roman'          !default;
+$w-cursive: 'Apple Chancery', 'Snell Roundhand'    !default;
+$w-mono:    Menlo, Consolas, Courier              !default;
+
+// **
+// * Generic typefaces for Chinese
+// *
+$zh-pre:(
+Heiti: 'Source Han Sans SC',                     
+Songti: 'var(--font-text-override)',                  
+Kaiti: 'HYQuanTangShiJ',                    
+Fangsong: null,
+Mono: null
+);
+
+//glyph
+//biaodian
+// **
+// * Chinese Biaodian set in general
+// * `Pro` || `CNS` || `GB` || `simp`
+// *
+$han-biaodian-hant:       CNS     !default

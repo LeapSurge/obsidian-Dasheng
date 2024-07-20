@@ -1,0 +1,129 @@
+
+/**
+ * The Four Typefaces: Heiti
+ *  四大字體集・黑體
+ */
+
+// * 1. 中文简体
+// * 2. 中文繁体
+
+
+// 1
+@font-face {
+  font-family: 'Hans Heiti';
+  src:
+    // 思源
+    local('Source Han Sans SC'),
+    local('Source Han Sans CN'),
+    local('Noto Sans CJK SC'),
+    local('Noto Sans SC'),
+
+    // 冬青
+    local('Hiragino Sans GB'),
+    // 苹方
+    local('.PingFang SC Light'),
+    local('.PingFang-SC-Light'),
+    local('.PingFang SC'),
+    // 兰亭
+    local('Lantinghei SC Extralight'),
+    local(FZLTXHK--GBK1-0),
+    local('Lantinghei SC'),
+    // 华文
+    local('Heiti SC Light'),
+    local(STHeitiSC-Light),
+    local('Heiti SC'),
+
+    local('Droid Sans Fallback')
+  ;
+}
+
+
+
+// 2
+@font-face {
+  font-family: 'Hant Heiti';
+  src:
+    local('Noto Sans CJK TC'),
+    local('Source Han Sans TC'),
+    local('Source Han Sans TW'),
+    local('Source Han Sans TWHK'),
+    local('Source Han Sans HK'),
+
+    local('.PingFang TC Light'),
+    local('.PingFang-TC-Light'),
+    local('.PingFang TC'),
+
+    local('Heiti TC Light'),
+    local(STHeitiTC-Light),
+    local('Heiti TC'),
+
+    local('Lantinghei TC Extralight'),
+    local(FZLTXHB--B51-0),
+    local('Lantinghei TC'),
+
+    local('Microsoft Jhenghei'),
+
+    local('Droid Sans Fallback')
+  ;
+}
+
+
+/*
+ * Bold
+ */
+@font-face {
+  font-family: 'Hans Heiti';
+  font-weight: 700;
+  src:
+    local('Source Han Sans SC Bold'),
+    local('Source Han Sans CN Bold'),
+    local('SourceHanSansSC-Bold'),
+    local('SourceHanSansCN-Bold'),
+    local('Noto Sans CJK SC Bold'),
+    local('Noto Sans SC Bold'),
+    local(NotoSansCJKsc-Bold),
+
+    local('Hiragino Sans GB W6'),
+    local(HiraginoSansGB-W6),
+
+    local('.PingFang SC Semibold'),
+    local('.PingFang-SC-Semibold'),
+
+    local('Lantinghei SC Demibold'),
+
+    local('STHeitiSC-Medium'),
+    local('Heiti SC Medium'),
+
+    local('Microsoft YaHei Bold'),
+    local(MicrosoftYaHei-Bold),
+  ;
+}
+
+
+// 2
+@font-face {
+  font-family: 'Hant Heiti';
+  font-weight: 700;
+  src:
+    local('Noto Sans CJK TC Bold'),
+    local(NotoSansCJKTC-Bold),
+    local('Source Han Sans TC Bold'),
+    local(SourceHanSansTC-Bold),
+    local('Source Han Sans TW Bold'),
+    local('Source Han Sans TWHK Bold'),
+    local('Source Han Sans HK Bold')
+
+    local('.PingFang TC Semibold'),
+    local('.PingFang-TC-Semibold'),
+    local('.PingFang TC Semibold'),
+
+    local('Heiti TC Medium'),
+    local('STHeitiTC-Medium'),
+
+    local('Lantinghei TC Demibold'),
+    
+    local('Microsoft Jhenghei Bold'),
+    local(MicrosoftJhengHei-Bold),
+
+  ;
+}

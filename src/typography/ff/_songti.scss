@@ -1,0 +1,95 @@
+
+/**
+ * The Four Typefaces: Songti (serif)
+ * 四大字體集・宋體
+ */
+
+// * 1. 简体字形
+// * 2. 繁体字形
+
+// 1
+@font-face {
+  font-family: 'Hans Songti';
+  src:
+    // 思源宋体
+    local('Source Han Serif SC'),
+    local('Source Han Serif CN'),
+    local('Noto Serif CJK SC'),
+    local('Noto Serif SC'),
+
+    // 华文宋体
+    local('Songti SC Regular'),
+    local(STSongti-SC-Regular),
+    local('Songti SC'),
+    local('STSong'),
+    
+    // 中易，新细明体
+    local(SimSun),
+    local(PMingLiU)
+  ;
+}
+
+
+// 2
+@font-face {
+  font-family: 'Hant Songti';
+  src:
+    local(YuMincho),
+    local('Hiragino Mincho ProN'),
+    local('Hiragino Mincho Pro'),
+    local('MS Mincho')
+
+    local('Songti TC Regular'),
+    local(STSongti-TC-Regular),
+    local('Songti TC'),
+
+    local('Lisong Pro'),
+    local(PMingLiU),
+    local(SimSun)
+  ;
+}
+
+
+
+/* 
+ * Bold
+ */
+
+// 1
+@font-face {
+  font-family: 'Hans Songti';
+  font-weight: 700;
+  src:
+    local('Source Han Serif SC Bold'),
+    local('Source Han Serif CN Bold'),
+    local('Noto Serif CJK SC Bold'),
+    local('Noto Serif SC Bold'),
+
+    local('STSongti SC Bold'),
+    local(STSongti-SC-Bold),
+    local('STSongti TC Bold'),
+    local(STSongti-TC-Bold),
+  ;
+}
+
+
+// 2
+@font-face {
+  font-family: 'Hant Songti';
+  font-weight: 700;
+  src:
+    local('YuMincho Demibold'),
+    local(YuMin-Demibold),
+    local('Hiragino Mincho ProN W6'),
+    local(HiraMinProN-W6),
+    local('Hiragino Mincho Pro W6'),
+    local(HiraMinPro-W6),
+
+    local('STSongti TC Bold'),
+    local(STSongti-TC-Bold),
+    local('STSongti SC Bold'),
+    local(STSongti-SC-Bold),
+  ;
+}
+
+
