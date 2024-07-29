@@ -176,6 +176,7 @@ body {
 }
 
 body {
+  --p-spacing: calc(0.5 * var(--font-text-size));
   --h1-size: calc(1.75 * var(--font-text-size));
   --h1-line-height: calc(2.25 * var(--font-text-size));
   --h2-size: calc(1.5 * var(--font-text-size));
@@ -188,7 +189,6 @@ body {
   --h5-line-height: calc(1.625 * var(--font-text-size));
   --h6-size: calc(1 * var(--font-text-size));
   --h6-line-height: calc(1.5 * var(--font-text-size));
-  --p-spacing: calc(0.5 * var(--font-text-size));
   /* 设置标题后收紧 */
   /* 1. 标题接排收紧 */
   /* 2. 标题接其他块 */
@@ -223,9 +223,6 @@ body .markdown-rendered h6 {
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0 * var(--font-text-size));
 }
-body div:has(> p) + div > :is(ul, ol) {
-  margin-block-start: calc(-1 * var(--p-spacing)) !important;
-}
 body .markdown-rendered :is(div:has(> :is(h1, h2, h3, h4, h5, h6)) + div > h6,
 div:has(> :is(h1, h2, h3, h4, h5)) + div > h5,
 div:has(> :is(h1, h2, h3, h4)) + div > h4,
@@ -246,19 +243,26 @@ body .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-5 {
 body .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-6 {
   padding-top: calc(0.2 * var(--font-text-size)) !important;
 }
+body div:has(> p) + div > :is(ul, ol) {
+  margin-block-start: calc(-1 * var(--p-spacing)) !important;
+}
+body blockquote {
+  margin-block-start: var(--p-spacing);
+  margin-block-end: var(--p-spacing);
+}
 
 .markdown-rendered div:has(> p) {
   text-indent: 2em;
 }
 
 .markdown-preview-section > div:has(> :is(ol, ul)) {
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 ol,
 ul {
   --list-indent: 0;
-  padding-left: 2.25em !important;
+  padding-left: 1em !important;
 }
 
 body {

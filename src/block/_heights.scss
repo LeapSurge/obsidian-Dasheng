@@ -32,13 +32,16 @@ $mods: (
     ),
     'p': $pc * $hlg-c,
   ),
-  // spongy: (
+  // 'spongy': (
   // ),
 );
 
 @mixin mod($mod-name) {
   $mod-map: map-get($mods, $mod-name);
   $height: 'var(--font-text-size)';
+
+  // block gap
+  --p-spacing: calc(#{map-get($mod-map, 'p')} * #{$height});
 
   // heading control
   @each $head,$attributes in map-get($mod-map, 'headings') {
@@ -50,14 +53,6 @@ $mods: (
       margin-block-start: var(--heading-spacing);
       margin-block-end: calc(#{map-get($attributes,'margin bottom')} * #{$height});
     }
-  }
-
-  // block gap
-  --p-spacing: calc(#{map-get($mod-map, 'p')} * #{$height});
-
-  // list
-  div:has(> p) + div > :is(ul,ol){
-    margin-block-start: calc(-1 * var(--p-spacing)) !important;
   }
 
   /* 设置标题后收紧 */
@@ -86,4 +81,15 @@ $mods: (
   .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-6 {
     padding-top: calc(0.2* #{$height}) !important;
   }
+
+  // list
+  div:has(> p) + div > :is(ul,ol){
+    margin-block-start: calc(-1 * var(--p-spacing)) !important;
+  }
+
+  blockquote {
+    margin-block-start: var(--p-spacing);
+    margin-block-end: var(--p-spacing);
+  }
+
 }

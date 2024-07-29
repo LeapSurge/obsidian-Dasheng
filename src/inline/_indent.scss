@@ -5,13 +5,13 @@
 }
 
 .markdown-preview-section > div:has(> :is(ol, ul)){
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 ol,
 ul {
   --list-indent: 0;
-  padding-left: 2.25em !important;
+  padding-left: 1em !important;
 }
 
 // blockquote
