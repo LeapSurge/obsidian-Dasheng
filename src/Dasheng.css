@@ -277,4 +277,94 @@ body {
 
 .markdown-rendered .callout {
   margin: 0em;
+}
+
+body {
+  /* 文件头 */
+  --file-header-justify: left;
+}
+body.theme-light {
+  --icon-color: black;
+  /* background */
+  --background-primary: #f8f3d4;
+  --background-primary-alt: #F7EB99;
+  --background-secondary: #00e5d3;
+  --background-secondary-alt: #ffde7d;
+  --background-modifier-active-hover: #D6A01D;
+  --background-modifier-border: #E60008;
+  --background-modifier-border-hover: #D6A01D;
+  --background-modifier-border-focus: #D6A01D;
+  --color-accent-hsl: 358,100%,50%;
+  --color-accent: #E60008;
+  --color-accent-1: #993D42;
+  --color-accent-2: #a95a35;
+  /* Text */
+  --text-on-accent: #993D42;
+  --text-on-accent-inverted: #ffde7d;
+  --interactive-normal: #f8f3d4;
+  --interactive-hover: #ffde7d;
+  --toggle-thumb-color: #ffde7d;
+  --nav-item-background-hover: #993D42;
+  --nav-item-background-active: #993D42;
+  --nav-item-color-active: #ffde7d;
+  --nav-item-color-hover: #ffde7d;
+  --nav-collapse-icon-color: #E60008;
+  --nav-collapse-icon-color-collapsed: #E60008;
+  --ribbon-background: #19be72;
+  --tab-container-background: #19be72;
+  /* links */
+  --link-color: #D6A01D;
+  --link-color-hover: #E60008;
+  --link-external-color: #D6A01D;
+  --link-external-color-hover: #E60008;
+  /* lists */
+  --list-marker-color: #D6A01D;
+  --list-marker-color-hover: #993D42;
+  --list-marker-color-collapsed: #993D42;
+  /* graph */
+  --graph-line: #895f02;
+  --graph-node: #F6BEC8;
+  --graph-node-unresolved: #19be72;
+  --graph-node-focused: #E60008;
+}
+
+/* stroke of the UI */
+/* 界面描边 */
+body {
+  --divider-width: 2px;
+  /* --background-modifier-border >> --divider-color */
+  --divider-color: black;
+  --tab-outline-width: 2px;
+}
+
+/* 边界线调整 */
+.titlebar-button-container {
+  display: flex;
+  position: absolute;
+  top: calc(-1 * var(--tab-outline-width));
+}
+
+.tree-item.nav-folder:not(.is-collapsed) {
+  border-radius: var(--radius-s);
+  background-color: rgba(128, 128, 128, 0.15);
+}
+
+.nav-buttons-container {
+  justify-content: left;
+}
+
+.search-result:not(.is-collapsed) .search-result-file-title {
+  color: black;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  border: 2px solid black;
+}
+
+body:not(.is-grabbing) .tree-item-self.is-active:hover,
+.tree-item-self.is-active {
+  border: 2px solid black;
 }/*# sourceMappingURL=Dasheng.css.map */

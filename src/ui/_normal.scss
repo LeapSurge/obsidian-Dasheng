@@ -1,0 +1,112 @@
+@use '../globals' as *;
+
+body{
+  &.theme-light{
+    --icon-color: black;
+    /* background */
+    --background-primary: #{$yellow-base};
+    --background-primary-alt: #{$yellow-0};
+    --background-secondary: #{$green-0};
+    --background-secondary-alt: #{$yellow-1};
+    // --background-modifier-hover: rgba(var(--mono-rgb-100), 0.075);
+    --background-modifier-active-hover: #{$yellow-2};
+    --background-modifier-border: #{$red-0};
+    --background-modifier-border-hover: #{$yellow-2};
+    --background-modifier-border-focus: #{$yellow-2};
+
+    --color-accent-hsl: 358,100%,50%;
+    --color-accent: #{$red-0};
+    --color-accent-1: #{$red-1};
+    --color-accent-2: #{$red-2};
+
+    /* Text */
+    --text-on-accent: #{$red-1};
+    --text-on-accent-inverted: #{$yellow-1};
+    --interactive-normal: #{$yellow-base};
+    --interactive-hover: #{$yellow-1};
+    // --interactive-accent-hsl: var(--color-accent-hsl);
+    // --interactive-accent: var(--color-accent-1);
+    // --interactive-accent-hover: var(--color-accent-2);
+
+
+    --toggle-thumb-color: #{$yellow-1};
+
+    // navigation
+    --nav-item-background-hover: #{$red-1};
+    --nav-item-background-active: #{$red-1};
+    --nav-item-color-active: #{$yellow-1};
+    --nav-item-color-hover: #{$yellow-1};
+    // --nav-indentation-guide-color: black;
+    --nav-collapse-icon-color: #{$red-0};
+    --nav-collapse-icon-color-collapsed: #{$red-0};
+
+
+    --ribbon-background: #{$green-1};
+    --tab-container-background: #{$green-1};
+
+    /* links */
+    --link-color: #{$yellow-2};
+    --link-color-hover: #{$red-0};
+    --link-external-color: #{$yellow-2};
+    --link-external-color-hover:  #{$red-0};
+
+    /* lists */
+    --list-marker-color: #{$yellow-2};
+    --list-marker-color-hover: #{$red-1};
+    --list-marker-color-collapsed: #{$red-1};
+
+    /* graph */
+    --graph-line: #{$yellow-3};
+    --graph-node: #{$red-4};
+    --graph-node-unresolved: #{$green-1};
+    --graph-node-focused: #{$red-0};
+  }
+  // &.theme-dark{
+  // }
+  /* 文件头 */
+  --file-header-justify: left;
+}
+
+/* stroke of the UI */
+/* 界面描边 */
+body {
+  --divider-width: 2px;
+  /* --background-modifier-border >> --divider-color */
+  --divider-color: black;
+  --tab-outline-width: 2px;
+}
+/* 边界线调整 */
+.titlebar-button-container {
+  display: flex;
+  position: absolute;
+  top: calc(-1 *var(--tab-outline-width));
+}
+
+// 文件夹展开
+.tree-item.nav-folder:not(.is-collapsed){
+  border-radius: var(--radius-s);
+  background-color: #{rgba(gray, 0.15)};
+}
+
+// 按钮左对齐
+.nav-buttons-container {
+  justify-content: left;
+}
+
+// 搜索结果纠正
+.search-result:not(.is-collapsed) .search-result-file-title {
+  color: black;
+}
+
+// 选中项边框
+body:not(.is-grabbing) .nav-file-title.is-active:hover,
+body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  border: 2px solid black;
+}
+
+body:not(.is-grabbing) .tree-item-self.is-active:hover,
+.tree-item-self.is-active {
+  border: 2px solid black;
+}
