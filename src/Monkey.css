@@ -134,28 +134,28 @@
   font-weight: 700;
   src: local("Helvetica Neue Bold Italic"), local("Helvetica Bold Oblique"), local("Arial Bold Italic"), local(HelveticaNeue-BoldItalic), local(Helvetica-BoldOblique), local(Arial-BoldItalicMT);
 }
-html:lang(zh), html:lang(zh-hans), .markdown-preview-view:lang(zh), .markdown-preview-view:lang(zh-hans), .markdown-source-view.mod-cm6 .cm-scroller:lang(zh), .markdown-source-view.mod-cm6 .cm-scroller:lang(zh-hans) {
+html:lang(en), html:lang(zh), html:lang(zh-hans), .markdown-preview-view:lang(en), .markdown-preview-view:lang(zh), .markdown-preview-view:lang(zh-hans), .markdown-source-view.mod-cm6 .cm-scroller:lang(en), .markdown-source-view.mod-cm6 .cm-scroller:lang(zh), .markdown-source-view.mod-cm6 .cm-scroller:lang(zh-hans) {
   font-family: "Biaodian Hans Serif", Georgia, "Times News Roman", var(--font-text-override), "Hans Songti", Serif !important;
 }
 html:lang(zh-hant), .markdown-preview-view:lang(zh-hant), .markdown-source-view.mod-cm6 .cm-scroller:lang(zh-hant) {
   font-family: "Biaodian Hant Serif", Georgia, "Times News Roman", var(--font-text-override), "Hant Songti", Serif !important;
 }
 
-pre:lang(zh), pre:lang(zh-hans) {
+pre:lang(en), pre:lang(zh), pre:lang(zh-hans) {
   font-family: "Biaodian Hans Sans", Menlo, Consolas, Courier, Source Han Sans SC, "Hans Heiti", sans-serif !important;
 }
 pre:lang(zh-hant) {
   font-family: "Biaodian Hant Sans", Menlo, Consolas, Courier, Source Han Sans SC, "Hant Heiti", sans-serif !important;
 }
 
-.markdown-rendered blockquote:lang(zh), .markdown-rendered blockquote:lang(zh-hans), .markdown-source-view.mod-cm6.is-live-preview.HyperMD-quote:lang(zh), .markdown-source-view.mod-cm6.is-live-preview.HyperMD-quote:lang(zh-hans) {
+.markdown-rendered blockquote:lang(en), .markdown-rendered blockquote:lang(zh), .markdown-rendered blockquote:lang(zh-hans), .markdown-source-view.mod-cm6.is-live-preview.HyperMD-quote:lang(en), .markdown-source-view.mod-cm6.is-live-preview.HyperMD-quote:lang(zh), .markdown-source-view.mod-cm6.is-live-preview.HyperMD-quote:lang(zh-hans) {
   font-family: "Biaodian Hans Serif", "Apple Chancery", "Snell Roundhand", HYQuanTangShiJ, "Hans Kaiti", cursive !important;
 }
 .markdown-rendered blockquote:lang(zh-hant), .markdown-source-view.mod-cm6.is-live-preview.HyperMD-quote:lang(zh-hant) {
   font-family: "Biaodian Hant Serif", "Apple Chancery", "Snell Roundhand", HYQuanTangShiJ, "Hant Kaiti", cursive !important;
 }
 
-h1:lang(zh), h1:lang(zh-hans), h2:lang(zh), h2:lang(zh-hans), h3:lang(zh), h3:lang(zh-hans), h4:lang(zh), h4:lang(zh-hans), h5:lang(zh), h5:lang(zh-hans), h6:lang(zh), h6:lang(zh-hans), .HyperMD-header:lang(zh), .HyperMD-header:lang(zh-hans) {
+h1:lang(en), h1:lang(zh), h1:lang(zh-hans), h2:lang(en), h2:lang(zh), h2:lang(zh-hans), h3:lang(en), h3:lang(zh), h3:lang(zh-hans), h4:lang(en), h4:lang(zh), h4:lang(zh-hans), h5:lang(en), h5:lang(zh), h5:lang(zh-hans), h6:lang(en), h6:lang(zh), h6:lang(zh-hans), .HyperMD-header:lang(en), .HyperMD-header:lang(zh), .HyperMD-header:lang(zh-hans) {
   font-family: "Biaodian Hans Sans", "Helvetica Neue", Helvetica, Arial, Source Han Sans SC, "Hans Heiti", sans-serif !important;
 }
 h1:lang(zh-hant), h2:lang(zh-hant), h3:lang(zh-hant), h4:lang(zh-hant), h5:lang(zh-hant), h6:lang(zh-hant), .HyperMD-header:lang(zh-hant) {
@@ -163,7 +163,18 @@ h1:lang(zh-hant), h2:lang(zh-hant), h3:lang(zh-hant), h4:lang(zh-hant), h5:lang(
 }
 
 body {
-  --blockquote-color: rgb(169, 90, 53);
+  --blockquote-color: #c9242b;
+  --code-normal: var(--text-normal);
+  --code-comment: var(--text-muted);
+  --code-function: #875C00;
+  --code-important: #8C4100;
+  --code-keyword: #B02D6C;
+  --code-operator: $red-3;
+  --code-property: #006E6C;
+  --code-punctuation: var(--text-muted);
+  --code-string: #01722A;
+  --code-tag: $red-3;
+  --code-value: #5D3EBB;
   --h1-weight: 900;
   --h2-weight: 900;
   --h2-color: #c9242b;
@@ -173,6 +184,24 @@ body {
   --h5-weight: 900;
   --h6-weight: 900;
   --h6-color: #c9242b;
+}
+
+/* poetry callout */
+.callout[data-callout=poetry] {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #c9242b;
+}
+
+.callout[data-callout=poetry] .callout-title {
+  display: none;
+}
+
+.callout[data-callout=poetry] .callout-content {
+  margin: 0;
+  width: 100%;
 }
 
 body {
@@ -251,10 +280,24 @@ body blockquote {
   margin-block-end: var(--p-spacing);
 }
 
-.markdown-rendered div:has(> p) {
-  text-indent: 2em;
+/* general */
+a:is([href="#indent"], [href="#suo"]) {
+  padding: 0;
+  margin-right: -0.25em;
+  display: inline-block;
+  height: 0;
+  font-size: inherit;
+  width: 2em;
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
 }
 
+.cm-tag-indent, .cm-tag-suo {
+  pointer-events: none;
+}
+
+/* list */
 .markdown-preview-section > div:has(> :is(ol, ul)) {
   margin-left: 1em;
 }
@@ -288,12 +331,13 @@ body.theme-light {
   /* background */
   --background-primary: #f8f3d4;
   --background-primary-alt: #F7EB99;
-  --background-secondary: #00e5d3;
+  --background-secondary: #C7EDCC;
   --background-secondary-alt: #ffde7d;
-  --background-modifier-active-hover: #D6A01D;
+  --background-modifier-hover: rgba(200, 50, 50, 0.15);
+  --background-modifier-active-hover: rgba(200, 60, 60, 0.3);
   --background-modifier-border: #E60008;
-  --background-modifier-border-hover: #D6A01D;
-  --background-modifier-border-focus: #D6A01D;
+  --background-modifier-border-hover: #C4913A;
+  --background-modifier-border-focus: #C4913A;
   --color-accent-hsl: 358,100%,50%;
   --color-accent: #E60008;
   --color-accent-1: #993D42;
@@ -304,32 +348,36 @@ body.theme-light {
   --interactive-normal: #f8f3d4;
   --interactive-hover: #ffde7d;
   --toggle-thumb-color: #ffde7d;
+  /* navigation */
+  --nav-item-color: var(--text-normal);
   --nav-item-background-hover: #993D42;
   --nav-item-background-active: #993D42;
   --nav-item-color-active: #ffde7d;
   --nav-item-color-hover: #ffde7d;
   --nav-collapse-icon-color: #E60008;
   --nav-collapse-icon-color-collapsed: #E60008;
-  --ribbon-background: #19be72;
-  --tab-container-background: #19be72;
+  --ribbon-background: #5DAD78;
+  --tab-container-background: #5DAD78;
   /* links */
-  --link-color: #D6A01D;
+  --link-color: #C4913A;
   --link-color-hover: #E60008;
-  --link-external-color: #D6A01D;
+  --link-external-color: #C4913A;
   --link-external-color-hover: #E60008;
   /* lists */
-  --list-marker-color: #D6A01D;
+  --list-marker-color: #C4913A;
   --list-marker-color-hover: #993D42;
   --list-marker-color-collapsed: #993D42;
   /* graph */
   --graph-line: #895f02;
   --graph-node: #F6BEC8;
-  --graph-node-unresolved: #19be72;
+  --graph-node-unresolved: #5DAD78;
   --graph-node-focused: #E60008;
+  /* inline-title */
+  --inline-title-font: "寒蝉端黑宋 Soft";
+  --inline-title-weight: 900;
 }
 
 /* stroke of the UI */
-/* 界面描边 */
 body {
   --divider-width: 2px;
   /* --background-modifier-border >> --divider-color */
@@ -337,16 +385,22 @@ body {
   --tab-outline-width: 2px;
 }
 
-/* 边界线调整 */
 .titlebar-button-container {
   display: flex;
   position: absolute;
   top: calc(-1 * var(--tab-outline-width));
 }
 
+.mod-sidedock .workspace-tab-header.is-active {
+  --icon-color-focused: #ffde7d;
+  --tab-text-color-focused-active-current: #ffde7d;
+  --background-modifier-hover: #993D42;
+}
+
+/* navigation */
 .tree-item.nav-folder:not(.is-collapsed) {
   border-radius: var(--radius-s);
-  background-color: rgba(128, 128, 128, 0.15);
+  background-color: rgba(200, 50, 50, 0.15);
 }
 
 .nav-buttons-container {
@@ -361,10 +415,35 @@ body:not(.is-grabbing) .nav-file-title.is-active:hover,
 body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  border: 2px solid black;
+  border-left: 8px solid #ffde7d;
+  border-right: 8px solid #ffde7d;
 }
 
 body:not(.is-grabbing) .tree-item-self.is-active:hover,
 .tree-item-self.is-active {
-  border: 2px solid black;
-}/*# sourceMappingURL=Dasheng.css.map */
+  border-left: 8px solid #ffde7d;
+  border-right: 8px solid #ffde7d;
+}
+
+/* modal */
+.modal-container.mod-dim .modal {
+  border: 2px solid var(--divider-color);
+}
+
+.modal.mod-settings .vertical-tab-header {
+  border-inline-end: 2px solid var(--divider-color);
+}
+
+.vertical-tab-header-group-title {
+  color: var(--text-normal);
+  background-color: #5DAD78;
+  font-size: var(--font-ui-large);
+  font-weight: var(--font-black);
+  border-radius: var(--radius-s);
+}
+
+.inline-title {
+  text-align: center;
+}
+
+/*# sourceMappingURL=Monkey.css.map */

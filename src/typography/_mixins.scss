@@ -9,6 +9,7 @@
 }
 
 @mixin typeface-by-lang( $biaodian: 'Serif', $western: vars.$w-serif, $zh: Songti, $base: Serif ) {
+  &:lang(en),
   &:lang(zh),
   &:lang(zh-hans) {
     font-family: 

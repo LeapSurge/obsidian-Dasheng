@@ -8,8 +8,8 @@ body{
     --background-primary-alt: #{$yellow-0};
     --background-secondary: #{$green-0};
     --background-secondary-alt: #{$yellow-1};
-    // --background-modifier-hover: rgba(var(--mono-rgb-100), 0.075);
-    --background-modifier-active-hover: #{$yellow-2};
+    --background-modifier-hover: rgba(200, 50, 50, 0.15);
+    --background-modifier-active-hover: rgba(200, 60, 60, 0.3);
     --background-modifier-border: #{$red-0};
     --background-modifier-border-hover: #{$yellow-2};
     --background-modifier-border-focus: #{$yellow-2};
@@ -31,7 +31,8 @@ body{
 
     --toggle-thumb-color: #{$yellow-1};
 
-    // navigation
+    /* navigation */
+    --nav-item-color: var(--text-normal);
     --nav-item-background-hover: #{$red-1};
     --nav-item-background-active: #{$red-1};
     --nav-item-color-active: #{$yellow-1};
@@ -60,6 +61,10 @@ body{
     --graph-node: #{$red-4};
     --graph-node-unresolved: #{$green-1};
     --graph-node-focused: #{$red-0};
+
+    /* inline-title */
+    --inline-title-font: "寒蝉端黑宋 Soft";
+    --inline-title-weight: 900;
   }
   // &.theme-dark{
   // }
@@ -68,31 +73,43 @@ body{
 }
 
 /* stroke of the UI */
-/* 界面描边 */
+// 描边
+// ----------------------------------------------
 body {
   --divider-width: 2px;
   /* --background-modifier-border >> --divider-color */
   --divider-color: black;
   --tab-outline-width: 2px;
 }
-/* 边界线调整 */
+//标题栏按钮描边调整
 .titlebar-button-container {
   display: flex;
   position: absolute;
   top: calc(-1 *var(--tab-outline-width));
 }
 
+// tab
+// ----------------------------------------------
+.workspace-tab-header {
+  .mod-sidedock &.is-active{
+      --icon-color-focused: #{$yellow-1};
+      --tab-text-color-focused-active-current: #{$yellow-1};
+      --background-modifier-hover: #{$red-1};
+  }
+}
+
+/* navigation */
+// 导航栏
+// -----------------------------------------------
 // 文件夹展开
 .tree-item.nav-folder:not(.is-collapsed){
   border-radius: var(--radius-s);
-  background-color: #{rgba(gray, 0.15)};
+  background-color: #{rgba(200,50,50,0.15)};
 }
-
 // 按钮左对齐
 .nav-buttons-container {
   justify-content: left;
 }
-
 // 搜索结果纠正
 .search-result:not(.is-collapsed) .search-result-file-title {
   color: black;
@@ -103,10 +120,32 @@ body:not(.is-grabbing) .nav-file-title.is-active:hover,
 body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  border: 2px solid black;
+  border-left: 8px solid $yellow-1;
+  border-right: 8px solid $yellow-1;
 }
-
 body:not(.is-grabbing) .tree-item-self.is-active:hover,
 .tree-item-self.is-active {
-  border: 2px solid black;
+  border-left: 8px solid $yellow-1;
+  border-right: 8px solid $yellow-1;
+}
+
+/* modal */
+// 设置框
+// -----------------------------------------
+.modal-container.mod-dim .modal{
+  border:2px solid var(--divider-color);
+}
+.modal.mod-settings .vertical-tab-header{
+  border-inline-end: 2px solid var(--divider-color);
+}
+.vertical-tab-header-group-title{
+  color: var(--text-normal);
+  background-color: $green-1;
+  font-size: var(--font-ui-large);
+  font-weight: var(--font-black);
+  border-radius: var(--radius-s);
+}
+
+.inline-title {
+  text-align: center;
 }

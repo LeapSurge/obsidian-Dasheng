@@ -1,9 +1,28 @@
 @use '../globals' as *;
 
-.markdown-rendered div:has(> p) {
-  text-indent: 2em;
+/* general */
+// 标签缩进
+// ---------------------------------------------
+a:is([href="#indent"],[href="#suo"]){
+  padding: 0;
+
+  margin-right:-0.25em;
+  display: inline-block;
+
+  height: 0;
+  font-size: inherit;
+  width: 2em;
+
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
 }
 
+.cm-tag-indent,.cm-tag-suo {
+  pointer-events: none;
+}
+
+/* list */
 .markdown-preview-section > div:has(> :is(ol, ul)){
   margin-left: 1em;
 }
@@ -13,6 +32,7 @@ ul {
   --list-indent: 0;
   padding-left: 1em !important;
 }
+
 
 // blockquote
 

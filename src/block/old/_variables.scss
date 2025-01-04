@@ -1,0 +1,37 @@
+@use 'sass:list';
+
+// 变量 
+// $baseSize:21px;
+$half-line-gap: 0.25;
+$default-indent: 2em;
+$p-height: 1 + 2 * $half-line-gap;
+$fonts: (
+    h1: '\'思源黑体\'',
+    h2: '\'思源黑体\'',
+    h3: '\'思源黑体\'',
+    h4: '\'思源黑体\'',
+    h5: '\'思源黑体\'',
+    h6: '\'思源黑体\''
+);
+$weights:(
+    h1: 900,
+    h2: 700,
+    h3: 500,
+    h4: 300,
+    h5: 700,
+    h6: 800,
+);
+
+// heights measured in half line gap
+$head-size-hlgs: (7,6,5.5,5,4.5,4);
+$head-bblank-hlgs: (3.25,3,2.75,2.5,2.25,2);
+
+// 标题高，换成(1/hlg + 2hlg)*x - 1/hlg 
+$head-full-height-hlgs: (18,16,14,13,10,9);
+$head-tblank-hlgs: ();
+@for $i from 1 through 6 {
+    $head-tblank-hlgs: append($head-tblank-hlgs, nth($head-full-height-hlgs, $i) 
+         - nth($head-size-hlgs, $i) - nth($head-bblank-hlgs, $i));
+}
+
+

@@ -1,0 +1,17 @@
+@use '../globals' as *;
+/* poetry callout */
+// 诗歌块，文本居中
+.callout[data-callout="poetry"] {
+  background: transparent;
+  margin:0;
+  padding: 0;
+  text-align: center;
+  color: #{$red-3};
+}
+.callout[data-callout="poetry"] .callout-title{
+  display: none; 
+}
+.callout[data-callout="poetry"] .callout-content{
+  margin: 0;
+  width: 100%;
+}

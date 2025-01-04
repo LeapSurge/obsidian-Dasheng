@@ -1,0 +1,42 @@
+@mixin variables {
+  /* 界面描边 */
+  --divider-width: 2px;
+  --tab-outline-width: 2px;
+}
+
+/* tab-header */
+.workspace-tab-header {
+  .mod-sidedock &{
+    &.is-active{
+      --icon-color-focused:#ffde7d;
+      --tab-text-color-focused-active-current:#ffde7d;
+      --background-modifier-hover: #993D42;
+      // .workspace-tab-header-inner {
+      //   height: 100%;
+      //   padding: 0 7px;
+      //   margin: 0;
+      //   border-radius: 50% 41% 39% 58% / 81% 48% 38% 17%;
+      //   &:hover{
+      //     background-color: #E60008;
+      //   }
+      // }
+    }
+  }
+}
+
+
+/* 侧栏中间container-header形状修改 */
+// .workspace-split.mod-horizontal .workspace-tabs:not(.mod-top)  .workspace-tab-container {
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: 25px;
+//     height: 13px;
+//     width: 100%;
+//     border: solid;
+//     background-color: $green-0;
+//     border-width: 2px 0 0 0;
+//     border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+//     z-index: 1;
+//   } 
+// }

@@ -1,0 +1,8 @@
+@mixin file-active {
+  body:not(.is-grabbing) .nav-file-title.is-active:hover,
+  body:not(.is-grabbing) .nav-folder-title.is-active:hover,
+  .nav-file-title.is-active,
+  .nav-folder-title.is-active{
+    border: 2px solid black;
+  }
+}

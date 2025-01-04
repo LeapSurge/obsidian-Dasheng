@@ -1,10 +1,27 @@
+@use '../globals' as *;
 // headings' weights and colors
 body {
-  --blockquote-color: rgb(169, 90, 53);
+
+  --blockquote-color: #{$red-3};
+
+  --code-normal: var(--text-normal);
+  --code-comment: var(--text-muted);
+  --code-function: #875C00;
+  --code-important: #8C4100;
+  --code-keyword: #B02D6C;
+  --code-operator: $red-3;
+  --code-property: #006E6C;
+  --code-punctuation: var(--text-muted);
+  --code-string: #01722A;
+  --code-tag: $red-3;
+  --code-value: #5D3EBB;
+
   @for $i from 1 through 6 {
     --h#{$i}-weight: 900;
     @if $i % 2 == 0 {
-      --h#{$i}-color: #c9242b;
+      --h#{$i}-color: #{$red-3};
     }
   }
+
+
 }

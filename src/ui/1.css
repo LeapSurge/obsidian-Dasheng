@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* tab-header */
+.mod-sidedock .workspace-tab-header {
+  padding: 0;
+  margin: 0;
+}
+.mod-sidedock .workspace-tab-header.is-active {
+  background-color: #E60008;
+  --background-modifier-hover: blue;
+}
+
+/* 侧栏中间container-header形状修改 */
+
+/*# sourceMappingURL=1.css.map */

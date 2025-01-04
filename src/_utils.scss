@@ -16,12 +16,13 @@
   @return $result;
 }
 
-@function head( $hlg, $font, $bblank, $fullheight) {
-  $tblank: $fullheight - $font - $bblank;
-  $size: $font * $hlg;
-  $lineheight: ($font + 2) * $hlg;
-  $margint: ($tblank - 2) * $hlg;
-  $marginb: ($bblank - 2) * $hlg;
+// 标题各个维度的高度系数计算函数
+@function head( $meta, $font, $bblank, $allheight) {
+  $tblank: $allheight - $font - $bblank;
+  $size: $font * $meta;
+  $lineheight: ($font + 2) * $meta;
+  $margint: ($tblank - 2) * $meta;
+  $marginb: ($bblank - 2) * $meta;
 
   $head: (
     'size': $size,
