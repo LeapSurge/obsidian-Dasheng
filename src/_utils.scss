@@ -1,10 +1,10 @@
 @function to-string($font-list) {
   $result: ();
   $length: length($font-list);
-  
+
   @for $i from 1 through $length {
     $font: nth($font-list, $i);
-    
+
     @if $i == $length {
       // 最后一项(字体基型)不加引号
       $result: append($result, $font, comma);
@@ -17,18 +17,19 @@
 }
 
 // 标题各个维度的高度系数计算函数
-@function heading-metrics( $level, $meta, $grid-heading) {
+@function heading-metrics($level, $meta, $grid-heading) {
   $config: map-get($grid-heading, $level);
-  $top: map-get($config , total) - map-get($config , 'size') - map-get($config , bottom);
-  $size: map-get($config , 'size') * $meta;
-  $lineheight: (map-get($config , 'size') + 2) * $meta;
+  $top: map-get($config, total) - map-get($config, "size") -
+    map-get($config, bottom);
+  $size: map-get($config, "size") * $meta;
+  $lineheight: (map-get($config, "size") + 2) * $meta;
   $margin-top: ($top - 2) * $meta;
-  $margin-bottom: (map-get($config , bottom) - 2) * $meta;
+  $margin-bottom: (map-get($config, bottom) - 2) * $meta;
 
   @return (
-    'size': $size,
-    'line height': $lineheight,
-    'margin top': $margin-top,
-    'margin bottom': $margin-bottom
+    "size": $size,
+    "line height": $lineheight,
+    "margin top": $margin-top,
+    "margin bottom": $margin-bottom
   );
-} 
+}

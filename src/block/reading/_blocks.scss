@@ -12,13 +12,13 @@ body {
   h#{$i} {
     --h#{$i}-size: calc(#{map-get($metrics, size)} * #{v.$base-height});
     --h#{$i}-line-height: calc(
-      #{map-get($metrics, line-height)} * #{v.$base-height}
+      #{map-get($metrics, "line height")} * #{v.$base-height}
     );
     margin-block-start: calc(
-      #{map-get($metrics, margin-top)} * #{v.$base-height}
+      #{map-get($metrics, "margin top")} * #{v.$base-height}
     );
     margin-block-end: calc(
-      #{map-get($metrics, margin-bottom)} * #{v.$base-height}
+      #{map-get($metrics, "margin bottom")} * #{v.$base-height}
     );
   }
 

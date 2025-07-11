@@ -211,10 +211,10 @@ body {
 h1 {
   --h1-size: calc(1.75 * var(--font-text-size));
   --h1-line-height: calc(
-     * var(--font-text-size)
+    2.25 * var(--font-text-size)
   );
-  margin-block-start: calc( * var(--font-text-size));
-  margin-block-end: calc( * var(--font-text-size));
+  margin-block-start: calc(1.4375 * var(--font-text-size));
+  margin-block-end: calc(0.3125 * var(--font-text-size));
 }
 
 .markdown-rendered h1 {
@@ -228,10 +228,10 @@ h1 {
 h2 {
   --h2-size: calc(1.5 * var(--font-text-size));
   --h2-line-height: calc(
-     * var(--font-text-size)
+    2 * var(--font-text-size)
   );
-  margin-block-start: calc( * var(--font-text-size));
-  margin-block-end: calc( * var(--font-text-size));
+  margin-block-start: calc(1.25 * var(--font-text-size));
+  margin-block-end: calc(0.25 * var(--font-text-size));
 }
 
 .markdown-rendered h2 {
@@ -245,10 +245,10 @@ h2 {
 h3 {
   --h3-size: calc(1.375 * var(--font-text-size));
   --h3-line-height: calc(
-     * var(--font-text-size)
+    1.875 * var(--font-text-size)
   );
-  margin-block-start: calc( * var(--font-text-size));
-  margin-block-end: calc( * var(--font-text-size));
+  margin-block-start: calc(0.9375 * var(--font-text-size));
+  margin-block-end: calc(0.1875 * var(--font-text-size));
 }
 
 .markdown-rendered h3 {
@@ -262,10 +262,10 @@ h3 {
 h4 {
   --h4-size: calc(1.25 * var(--font-text-size));
   --h4-line-height: calc(
-     * var(--font-text-size)
+    1.75 * var(--font-text-size)
   );
-  margin-block-start: calc( * var(--font-text-size));
-  margin-block-end: calc( * var(--font-text-size));
+  margin-block-start: calc(0.875 * var(--font-text-size));
+  margin-block-end: calc(0.125 * var(--font-text-size));
 }
 
 .markdown-rendered h4 {
@@ -279,10 +279,10 @@ h4 {
 h5 {
   --h5-size: calc(1.125 * var(--font-text-size));
   --h5-line-height: calc(
-     * var(--font-text-size)
+    1.625 * var(--font-text-size)
   );
-  margin-block-start: calc( * var(--font-text-size));
-  margin-block-end: calc( * var(--font-text-size));
+  margin-block-start: calc(0.3125 * var(--font-text-size));
+  margin-block-end: calc(0.0625 * var(--font-text-size));
 }
 
 .markdown-rendered h5 {
@@ -296,10 +296,10 @@ h5 {
 h6 {
   --h6-size: calc(1 * var(--font-text-size));
   --h6-line-height: calc(
-     * var(--font-text-size)
+    1.5 * var(--font-text-size)
   );
-  margin-block-start: calc( * var(--font-text-size));
-  margin-block-end: calc( * var(--font-text-size));
+  margin-block-start: calc(0.25 * var(--font-text-size));
+  margin-block-end: calc(0 * var(--font-text-size));
 }
 
 .markdown-rendered h6 {
