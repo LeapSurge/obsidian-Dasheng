@@ -23,15 +23,14 @@ a:is([href="#indent"],[href="#suo"]){
 }
 
 /* list */
-.markdown-preview-section > div:has(> :is(ol, ul)){
-  margin-left: 1em;
-}
+// .markdown-preview-section > div:has(> :is(ol, ul)){
+//   margin-left: 1em;
+// }
 
-ol,
-ul {
-  --list-indent: 0;
-  padding-left: 1em !important;
-}
+// ol,ul {
+//   --list-indent: 0;
+//   padding-left: 1em !important;
+// }
 
 
 // blockquote
@@ -42,8 +41,8 @@ body{
 
 .markdown-rendered blockquote {
   border-inline-start: none;
-  padding-inline-start: calc(2 * var(--font-text-size));
-  text-indent: 2em;
+  // padding-inline-start: calc(2 * var(--font-text-size));
+  // text-indent: 2em;
 }
 
 .markdown-rendered .callout {

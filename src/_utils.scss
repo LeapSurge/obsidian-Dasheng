@@ -17,18 +17,18 @@
 }
 
 // 标题各个维度的高度系数计算函数
-@function head( $meta, $font, $bblank, $allheight) {
-  $tblank: $allheight - $font - $bblank;
-  $size: $font * $meta;
-  $lineheight: ($font + 2) * $meta;
-  $margint: ($tblank - 2) * $meta;
-  $marginb: ($bblank - 2) * $meta;
+@function heading-metrics( $level, $meta, $grid-heading) {
+  $config: map-get($grid-heading, $level);
+  $top: map-get($config , total) - map-get($config , 'size') - map-get($config , bottom);
+  $size: map-get($config , 'size') * $meta;
+  $lineheight: (map-get($config , 'size') + 2) * $meta;
+  $margin-top: ($top - 2) * $meta;
+  $margin-bottom: (map-get($config , bottom) - 2) * $meta;
 
-  $head: (
+  @return (
     'size': $size,
     'line height': $lineheight,
-    'margin top': $margint,
-    'margin bottom': $marginb
+    'margin top': $margin-top,
+    'margin bottom': $margin-bottom
   );
-  @return $head;
-}
+} 

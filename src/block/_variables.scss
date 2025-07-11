@@ -1,0 +1,30 @@
+// 基准高度，设置的字体大小
+$base-height: 'var(--font-text-size)';
+
+// meta元格，c表示紧凑，s表示宽松
+// 网格的最小单位的高度系数，来计算各个高度
+// --------------------------------------------
+$meta-compact: 0.25;
+//$meta-spongy: 0.5;
+
+
+// 块间间距
+$spacing-compact: 0.5;
+//$spacing-spongy: 1;
+
+
+// grid，格高度
+// 任何高度相对于元格的倍数。
+// 任何一个高度 H = $grid * $meta * $height
+// ---------------------------------------------
+// 1. heading
+$grid-heading-compact:(
+    1:(size: 7,   bottom: 3.25, total: 18),
+    2:(size: 6,   bottom: 3,    total: 16),
+    3:(size: 5.5, bottom: 2.75, total: 14),
+    4:(size: 5,   bottom: 2.5,  total: 13),
+    5:(size: 4.5, bottom: 2.25, total: 10),
+    6:(size: 4,   bottom: 2,    total: 9)
+);
+
+//$grid-heading-spongy:();

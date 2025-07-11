@@ -1,0 +1,12 @@
+@use "../variables" as v;
+// headings, 默认紧凑模式
+// 1. 重设标题上边距
+.cm-s-obsidian .cm-line.HyperMD-header {
+  padding-top: 0;
+}
+.cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-5 {
+  padding-top: calc(0.2 * #{v.$base-height});
+}
+.cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-6 {
+  padding-top: calc(0.2 * #{v.$base-height});
+}

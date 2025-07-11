@@ -1,9 +1,0 @@
-@use 'heights' as *;
-
-body {
-  @include mod('compact');
-
-  // &.spongy-mod{
-  //   @include mod('spongy');
-  // }
-}

@@ -120,13 +120,15 @@ body:not(.is-grabbing) .nav-file-title.is-active:hover,
 body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  border-left: 8px solid $yellow-1;
-  border-right: 8px solid $yellow-1;
+  box-shadow: 
+  inset -10px 0 0px -2px $yellow-1, /* 左侧阴影 */
+  inset 10px 0 0px -2px $yellow-1; /* 右侧阴影 */
 }
 body:not(.is-grabbing) .tree-item-self.is-active:hover,
 .tree-item-self.is-active {
-  border-left: 8px solid $yellow-1;
-  border-right: 8px solid $yellow-1;
+  box-shadow: 
+  inset -10px 0 0px -2px $yellow-1, /* 左侧阴影 */
+  inset 10px 0 0px -2px $yellow-1; /* 右侧阴影 */
 }
 
 /* modal */

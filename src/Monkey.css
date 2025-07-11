@@ -206,78 +206,142 @@ body {
 
 body {
   --p-spacing: calc(0.5 * var(--font-text-size));
-  --h1-size: calc(1.75 * var(--font-text-size));
-  --h1-line-height: calc(2.25 * var(--font-text-size));
-  --h2-size: calc(1.5 * var(--font-text-size));
-  --h2-line-height: calc(2 * var(--font-text-size));
-  --h3-size: calc(1.375 * var(--font-text-size));
-  --h3-line-height: calc(1.875 * var(--font-text-size));
-  --h4-size: calc(1.25 * var(--font-text-size));
-  --h4-line-height: calc(1.75 * var(--font-text-size));
-  --h5-size: calc(1.125 * var(--font-text-size));
-  --h5-line-height: calc(1.625 * var(--font-text-size));
-  --h6-size: calc(1 * var(--font-text-size));
-  --h6-line-height: calc(1.5 * var(--font-text-size));
-  /* 设置标题后收紧 */
-  /* 1. 标题接排收紧 */
-  /* 2. 标题接其他块 */
 }
-body .markdown-rendered h1 {
-  --heading-spacing: calc(1.4375 * var(--font-text-size));
+
+h1 {
+  --h1-size: calc(1.75 * var(--font-text-size));
+  --h1-line-height: calc(
+     * var(--font-text-size)
+  );
+  margin-block-start: calc( * var(--font-text-size));
+  margin-block-end: calc( * var(--font-text-size));
+}
+
+.markdown-rendered h1 {
+  --heading-spacing: calc(
+    1.4375 * var(--font-text-size)
+  );
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0.3125 * var(--font-text-size));
 }
-body .markdown-rendered h2 {
-  --heading-spacing: calc(1.25 * var(--font-text-size));
+
+h2 {
+  --h2-size: calc(1.5 * var(--font-text-size));
+  --h2-line-height: calc(
+     * var(--font-text-size)
+  );
+  margin-block-start: calc( * var(--font-text-size));
+  margin-block-end: calc( * var(--font-text-size));
+}
+
+.markdown-rendered h2 {
+  --heading-spacing: calc(
+    1.25 * var(--font-text-size)
+  );
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0.25 * var(--font-text-size));
 }
-body .markdown-rendered h3 {
-  --heading-spacing: calc(0.9375 * var(--font-text-size));
+
+h3 {
+  --h3-size: calc(1.375 * var(--font-text-size));
+  --h3-line-height: calc(
+     * var(--font-text-size)
+  );
+  margin-block-start: calc( * var(--font-text-size));
+  margin-block-end: calc( * var(--font-text-size));
+}
+
+.markdown-rendered h3 {
+  --heading-spacing: calc(
+    0.9375 * var(--font-text-size)
+  );
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0.1875 * var(--font-text-size));
 }
-body .markdown-rendered h4 {
-  --heading-spacing: calc(0.875 * var(--font-text-size));
+
+h4 {
+  --h4-size: calc(1.25 * var(--font-text-size));
+  --h4-line-height: calc(
+     * var(--font-text-size)
+  );
+  margin-block-start: calc( * var(--font-text-size));
+  margin-block-end: calc( * var(--font-text-size));
+}
+
+.markdown-rendered h4 {
+  --heading-spacing: calc(
+    0.875 * var(--font-text-size)
+  );
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0.125 * var(--font-text-size));
 }
-body .markdown-rendered h5 {
-  --heading-spacing: calc(0.3125 * var(--font-text-size));
+
+h5 {
+  --h5-size: calc(1.125 * var(--font-text-size));
+  --h5-line-height: calc(
+     * var(--font-text-size)
+  );
+  margin-block-start: calc( * var(--font-text-size));
+  margin-block-end: calc( * var(--font-text-size));
+}
+
+.markdown-rendered h5 {
+  --heading-spacing: calc(
+    0.3125 * var(--font-text-size)
+  );
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0.0625 * var(--font-text-size));
 }
-body .markdown-rendered h6 {
-  --heading-spacing: calc(0.25 * var(--font-text-size));
+
+h6 {
+  --h6-size: calc(1 * var(--font-text-size));
+  --h6-line-height: calc(
+     * var(--font-text-size)
+  );
+  margin-block-start: calc( * var(--font-text-size));
+  margin-block-end: calc( * var(--font-text-size));
+}
+
+.markdown-rendered h6 {
+  --heading-spacing: calc(
+    0.25 * var(--font-text-size)
+  );
   margin-block-start: var(--heading-spacing);
   margin-block-end: calc(0 * var(--font-text-size));
 }
-body .markdown-rendered :is(div:has(> :is(h1, h2, h3, h4, h5, h6)) + div > h6,
+
+.markdown-rendered :is(div:has(> :is(h1, h2, h3, h4, h5, h6)) + div > h6,
 div:has(> :is(h1, h2, h3, h4, h5)) + div > h5,
 div:has(> :is(h1, h2, h3, h4)) + div > h4,
 div:has(> :is(h1, h2, h3)) + div > h3,
 div:has(> :is(h1, h2)) + div > h2,
 div:has(> h1) + div > h1) {
-  margin-block-start: 0 !important;
+  margin-block-start: 0;
 }
-body .markdown-rendered div:has(> :is(h1, h2, h3, h4, h5, h6)) + div > :is(blockquote, p, ol, ul, pre) {
-  margin-block-start: 0 !important;
+
+.markdown-rendered div:has(> :is(h1, h2, h3, h4, h5, h6)) + div > :is(blockquote, p, ol, ul, pre) {
+  margin-block-start: 0;
 }
-body .cm-s-obsidian .cm-line.HyperMD-header {
-  padding-top: 0;
+
+.markdown-rendered div:has(> p) + div > :is(ul, ol) {
+  margin-block-start: calc(-1 * var(--p-spacing));
 }
-body .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-5 {
-  padding-top: calc(0.2 * var(--font-text-size)) !important;
-}
-body .cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-6 {
-  padding-top: calc(0.2 * var(--font-text-size)) !important;
-}
-body div:has(> p) + div > :is(ul, ol) {
-  margin-block-start: calc(-1 * var(--p-spacing)) !important;
-}
-body blockquote {
+
+blockquote {
   margin-block-start: var(--p-spacing);
   margin-block-end: var(--p-spacing);
+}
+
+.cm-s-obsidian .cm-line.HyperMD-header {
+  padding-top: 0;
+}
+
+.cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-5 {
+  padding-top: calc(0.2 * var(--font-text-size));
+}
+
+.cm-s-obsidian .cm-line.HyperMD-header.HyperMD-header-6 {
+  padding-top: calc(0.2 * var(--font-text-size));
 }
 
 /* general */
@@ -298,24 +362,12 @@ a:is([href="#indent"], [href="#suo"]) {
 }
 
 /* list */
-.markdown-preview-section > div:has(> :is(ol, ul)) {
-  margin-left: 1em;
-}
-
-ol,
-ul {
-  --list-indent: 0;
-  padding-left: 1em !important;
-}
-
 body {
   --blockquote-border-thickness: 0;
 }
 
 .markdown-rendered blockquote {
   border-inline-start: none;
-  padding-inline-start: calc(2 * var(--font-text-size));
-  text-indent: 2em;
 }
 
 .markdown-rendered .callout {
@@ -415,14 +467,12 @@ body:not(.is-grabbing) .nav-file-title.is-active:hover,
 body:not(.is-grabbing) .nav-folder-title.is-active:hover,
 .nav-file-title.is-active,
 .nav-folder-title.is-active {
-  border-left: 8px solid #ffde7d;
-  border-right: 8px solid #ffde7d;
+  box-shadow: inset -10px 0 0px -2px #ffde7d, inset 10px 0 0px -2px #ffde7d; /* 右侧阴影 */
 }
 
 body:not(.is-grabbing) .tree-item-self.is-active:hover,
 .tree-item-self.is-active {
-  border-left: 8px solid #ffde7d;
-  border-right: 8px solid #ffde7d;
+  box-shadow: inset -10px 0 0px -2px #ffde7d, inset 10px 0 0px -2px #ffde7d; /* 右侧阴影 */
 }
 
 /* modal */

@@ -1,0 +1,66 @@
+@use "../variables" as v;
+@use "../../utils" as f;
+body {
+  --p-spacing: calc(#{v.$spacing-compact} * #{v.$base-height});
+}
+
+// headings
+// 默认使用紧凑模式
+// 1. 设置标题的字体大小、行高、上下间距
+@for $i from 1 through 6 {
+  $metrics: f.heading-metrics($i, v.$meta-compact, v.$grid-heading-compact);
+  h#{$i} {
+    --h#{$i}-size: calc(#{map-get($metrics, size)} * #{v.$base-height});
+    --h#{$i}-line-height: calc(
+      #{map-get($metrics, line-height)} * #{v.$base-height}
+    );
+    margin-block-start: calc(
+      #{map-get($metrics, margin-top)} * #{v.$base-height}
+    );
+    margin-block-end: calc(
+      #{map-get($metrics, margin-bottom)} * #{v.$base-height}
+    );
+  }
+
+  .markdown-rendered h#{$i} {
+    --heading-spacing: calc(
+      #{map-get($metrics, "margin top")} * #{v.$base-height}
+    );
+    margin-block-start: var(--heading-spacing);
+    margin-block-end: calc(
+      #{map-get($metrics, "margin bottom")} * #{v.$base-height}
+    );
+  }
+}
+
+// 2. 标题接排收紧
+.markdown-rendered
+  :is(
+    div:has(> :is(h1, h2, h3, h4, h5, h6)) + div > h6,
+    div:has(> :is(h1, h2, h3, h4, h5)) + div > h5,
+    div:has(> :is(h1, h2, h3, h4)) + div > h4,
+    div:has(> :is(h1, h2, h3)) + div > h3,
+    div:has(> :is(h1, h2)) + div > h2,
+    div:has(> h1) + div > h1
+  ) {
+  margin-block-start: 0;
+}
+
+// 3. 标题接其他块
+.markdown-rendered
+  div:has(> :is(h1, h2, h3, h4, h5, h6))
+  + div
+  > :is(blockquote, p, ol, ul, pre) {
+  margin-block-start: 0;
+}
+
+// 列表
+.markdown-rendered div:has(> p) + div > :is(ul, ol) {
+  margin-block-start: calc(-1 * var(--p-spacing));
+}
+
+// 引用块
+blockquote {
+  margin-block-start: var(--p-spacing);
+  margin-block-end: var(--p-spacing);
+}
